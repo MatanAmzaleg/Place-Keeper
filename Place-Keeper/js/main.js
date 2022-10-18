@@ -25,3 +25,26 @@ function onIndexInit(){
     document.querySelector('.main-index-container').style.color = userPrefs.txtColor
 
 }
+
+function onMapInit(){
+    renderSavedLocations()
+}
+
+function renderSavedLocations(){
+    var locations = getGLocations()
+    var strHTML = locations.map((location) => `
+    <article  class="location-card">
+                    <button data-id="${location.id}" onClick="onDeleteLocation(this)" class="delete-location-btn">x</button>
+                    <h3>${location.locName}</h3>
+                    <p>saved: ${location.date}</p>
+                </article>
+    `).join('')
+
+    document.querySelector('.list-locations').innerHTML = strHTML
+}
+
+function onDeleteLocation(ev){
+    console.log(ev.dataset.id);
+    deleteLocation(ev.dataset.id)
+    renderSavedLocations()
+}

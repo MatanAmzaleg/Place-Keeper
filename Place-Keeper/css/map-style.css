@@ -7,8 +7,8 @@ html, body{
 }
 
 .main-map-container{
-    width: 80%;
-    height: 70%;
+    width: 90%;
+    height: 80%;
     margin: auto;
     display: flex;
     justify-content:space-around;
