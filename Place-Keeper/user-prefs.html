@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/user-pref.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Place Keeper</title>
+</head>
+
+<body>
+    <div class="form-pref-container">
+        <h2>User Preferences</h2>
+        <form id="user-pref-form" onsubmit="onSavePrefs(event)">
+            <table class="pref-table">
+                <tr>
+                    <td><label for="name">First name:</label></td>
+                    <td>
+                        <input type="text" id="name" name="fullName" placeholder="First and last name" required />
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="zoom">Zoom Factor:</label></td>
+
+                    <td><label for="tange"><span class="zoom-couner" id="sZoom">5</span><input type="range" id="zoom"
+                                name="zoom" step="1" min="1" max="15" value="5" onchange="showZoom(this.value)" />
+
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="background-color">Background Color</label></td>
+                    <td><input type="color" id="bcg-color" name="color" form="frmRegister" value="#FFFFFF" /></td>
+                </tr>
+                <tr>
+                    <td><label for="text-color">Text Color</label></td>
+                    <td><input type="color" id="txt-color" name="color" form="frmRegister" value="#000000" /></td>
+                </tr>
+            </table>
+        </form>
+        <button form="user-pref-form" class="save-btn">Save</button>
+    </div>
+
+
+    <script src="js/services/storage-service.js"></script>
+    <script src="js/services/utils-service.js"></script>
+    <script src="js/services/user-service.js"></script>
+    <script src="js/services/place-service.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
