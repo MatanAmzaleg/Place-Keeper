@@ -12,6 +12,8 @@ function savePrefs(userPrefs){
     console.log(gPrefs);
 }
 
+
+
 function getUserPrefs(){
    return loadFromStorage(USER_PREF_OBJ_KEY)
 }

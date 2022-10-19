@@ -1,6 +1,7 @@
 'use strict'
 
 var gLocations
+var gUserLocation
 const LOCATIONS_STORAGE_KEY ='locationsDB'
 createLocations()
 
@@ -9,7 +10,7 @@ function createLocations(){
 
     if(!locations || !locations.length){
         locations = []
-        locations.push(createLocation())
+        locations.push(_createLocation())
     }
 gLocations = locations
 saveLocationsToStorage()
@@ -54,39 +55,6 @@ function saveLocationToLocationsList(loc){
     renderSavedLocations()
 }
 
-let map;
-
-function initMap() {
-    map = new google.maps.Map(document.querySelector(".map-container"), {
-        center: { lat: 31.783012, lng: 34.631833 },
-        zoom: 15,
-    });
-console.log(gLocations);
-    var markers = gLocations.map(location =>{
-      return  new google.maps.Marker({
-            position: { lat: location.lat, lng: location.lng },
-            map: map,
-        })
-    })
-    console.log(markers);
-    
-    
-    map.addListener("click", (e) => {
-        placeMarkerAndPanTo(e.latLng, map);
-        saveLocationToLocationsList(e.latLng.toJSON())
-      });
-    
-}
-
-function placeMarkerAndPanTo(latLng, map) {
-    new google.maps.Marker({
-      position: latLng,
-      map: map,
-    });
-    map.panTo(latLng);
-  }
-
-window.initMap = initMap;
 
 
 
