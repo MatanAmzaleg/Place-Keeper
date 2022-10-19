@@ -56,11 +56,21 @@ html, body{
 }
 
 .delete-location-btn{
-    text-align: right;
-
+    margin-inline-start: 90%;
 }
 
 .location-img{
     width: 20px;
     background-color: red;
+}
+
+
+article h3{
+margin: 5px;
+font-size: medium;
+}
+
+article p{
+    font-size: medium;
+    margin: 5px;
 }
