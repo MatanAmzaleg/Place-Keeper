@@ -20,18 +20,15 @@ html, body{
 }
 
 .pref-table td{
-    width: 250px;
-    height: 40px;
+    width: 20vh;
+    height: 5vh;
 }
 
 .pref-table input{
-    width: 250px;
-    height: 30px;
+    width: 20vh;
+    height: 3vh;
 }
 
-.zoom-couner{
-    margin: auto;
-}
 
 .save-btn{
     margin-top: 1vh;
@@ -45,4 +42,27 @@ html, body{
 .save-btn:hover{
     transition: 1s;
     background-color: aquamarine;
+}
+
+
+@media only screen and (max-width: 600px) {
+
+    h2{
+        font-size: 1.5rem;
+    }
+    .pref-table td{
+        width: 8vh;
+        height: 3vh;
+        font-size: medium;
+    }
+    
+    .pref-table input{
+        width: 8vh;
+        height: 3vh;
+    }
+
+    .form-pref-container{
+        height: 40%;
+        width: 70%;
+    }
 }
