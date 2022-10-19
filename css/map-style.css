@@ -1,24 +1,28 @@
-html, body{
-    margin: 0; height: 100%; width: 100%; overflow: hidden;
+html,
+body {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: 'Bebas Neue', cursive;
 }
 
-.main-map-container{
+.main-map-container {
     width: 90%;
     height: 80%;
     margin: auto;
     display: flex;
-    justify-content:space-around;
+    justify-content: space-around;
     align-items: center;
     text-align: center;
-  font-size: 2rem;
-  background-color: antiquewhite;
+    font-size: 2rem;
+    background-color: antiquewhite;
 }
 
-.map-container{
+.map-container {
     border: 1px solid black;
     width: 57%;
     height: 90%;
@@ -26,7 +30,7 @@ html, body{
 
 }
 
-.list-conatiner{
+.list-conatiner {
     border: 1px solid black;
     width: 37%;
     height: 90%;
@@ -36,41 +40,52 @@ html, body{
     align-items: center;
 }
 
-.title-list{
+.title-list {
     color: rgb(114, 184, 161);
 }
 
-.list-locations{
+.list-locations {
     border: 1px solid black;
     height: 90%;
     width: 95%;
 }
 
-.location-card{
+.location-card {
     height: 20%;
     border: 1px solid black;
-    font-size:large;
+    font-size: large;
     text-align: left;
     padding: 5px;
     background-color: aquamarine;
 }
 
-.delete-location-btn{
+.delete-location-btn {
     margin-inline-start: 90%;
 }
 
-.location-img{
+.location-img {
     width: 20px;
     background-color: red;
 }
 
 
-article h3{
-margin: 5px;
-font-size: medium;
-}
+@media only screen and (max-width: 600px) {
 
-article p{
-    font-size: medium;
-    margin: 5px;
+    h3 .title-list{
+        margin: 10px;
+    }
+
+    article {
+        height: 50px;
+    }
+
+    article h3 {
+        margin: 5px;
+        font-size: medium;
+    }
+
+    article p {
+        font-size: medium;
+        margin: 5px;
+    }
 }
