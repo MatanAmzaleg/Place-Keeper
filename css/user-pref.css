@@ -3,6 +3,7 @@ html, body{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: 'Bebas Neue', cursive;
 }
 
 .header{
@@ -29,7 +30,7 @@ html, body{
     margin: auto;
     background-color: rgba(197, 211, 211, 0.342);
     border: 9px solid rgb(204, 193, 193);
-    font-family: 'Bebas Neue', cursive;
+
     font-size: 1.5rem;
 }
 
