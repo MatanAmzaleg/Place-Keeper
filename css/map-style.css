@@ -10,20 +10,59 @@ body {
     font-family: 'Bebas Neue', cursive;
 }
 
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    background-color: rgba(43, 42, 42, 0.133);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+
 .main-map-container {
     width: 90%;
     height: 80%;
     margin: auto;
+    margin-top: 200px;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     text-align: center;
     font-size: 2rem;
-    background-color: antiquewhite;
+    background-color: rgba(20, 20, 20, 0.178);
+    position: relative;
+}
+
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    font-size: 1.8rem;
+}
+
+.buttons a{
+    text-decoration: none;
+    color: black;
+}
+
+.map-and-list-container{
+    display: flex;
+    width: 100%;
+    height: 90%;
+    align-items: center;
+    justify-content: center;
 }
 
 .map-container {
-    border: 1px solid black;
+    border: 4px solid rgb(99, 99, 99);
     width: 57%;
     height: 90%;
     display: flex;
@@ -31,7 +70,7 @@ body {
 }
 
 .list-conatiner {
-    border: 1px solid black;
+    border: 4px solid rgb(99, 99, 99);;
     width: 37%;
     height: 90%;
     display: flex;
@@ -40,28 +79,51 @@ body {
     align-items: center;
 }
 
-.title-list {
-    color: rgb(114, 184, 161);
-}
-
 .list-locations {
+    border-radius: 5px;
+    background-color: rgba(70, 69, 68, 0.24);
     border: 1px solid black;
     height: 90%;
     width: 95%;
+    margin-block-end: 10px;
 }
 
 .location-card {
-    height: 20%;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: auto;
+    width: 90%;
+    margin-top: 10px;
+    height: 16%;
     border: 1px solid black;
     font-size: large;
     text-align: left;
     padding: 5px;
-    background-color: aquamarine;
+    background-color: rgba(224, 235, 231, 0.568);
+    font-family:  'Patua One', cursive;;
 }
 
-.delete-location-btn {
-    margin-inline-start: 90%;
+.delete-location-btn{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    margin-inline-end: 5px;
 }
+
+.location-card h3, .location-card p{
+    /* margin-top: 0; */
+    margin-bottom: 0;
+    margin-inline-start: 7px;
+}
+
+.location-card h3{
+    text-transform: uppercase;
+}
+
+
 
 .location-img {
     width: 20px;
@@ -87,5 +149,9 @@ body {
     article p {
         font-size: medium;
         margin: 5px;
+    }
+
+    .location-card{
+        height: 13%;
     }
 }

@@ -5,27 +5,41 @@ html, body{
     justify-content: center;
 }
 
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 150px;
+    background-color: rgba(43, 42, 42, 0.133);
+    position: absolute;
+    top: 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+
 .form-pref-container{
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 40%;
+    height: 50%;
     width: 50%;
     margin: auto;
-    background-color: rgb(196, 240, 240);
+    background-color: rgba(197, 211, 211, 0.342);
     border: 9px solid rgb(204, 193, 193);
     font-family: 'Bebas Neue', cursive;
     font-size: 1.5rem;
 }
 
 .pref-table td{
-    width: 20vh;
+    width: 30vh;
     height: 5vh;
 }
 
 .pref-table input{
-    width: 20vh;
+    width: 30vh;
     height: 3vh;
 }
 
@@ -51,14 +65,15 @@ html, body{
         font-size: 1.5rem;
     }
     .pref-table td{
-        width: 8vh;
+        width: 10vh;
         height: 3vh;
         font-size: medium;
     }
     
     .pref-table input{
-        width: 8vh;
+        width: 10vh;
         height: 3vh;
+        border-radius: 0px;
     }
 
     .form-pref-container{

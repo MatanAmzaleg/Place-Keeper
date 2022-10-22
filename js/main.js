@@ -17,7 +17,7 @@ function showZoom(newVal) {
     document.getElementById('sZoom').innerHTML = newVal
 }
 
-function onUserPrefsInit(){
+function onUserPrefsInit() {
     var userPrefs = getUserPrefs()
     document.querySelector('body').style.backgroundColor = userPrefs.bgdColor
     document.querySelector('.form-pref-container').style.color = userPrefs.txtColor
@@ -41,8 +41,9 @@ function onMapInit() {
 
 function renderSavedLocations() {
     var locations = getGLocations()
+    console.log(locations);
     var strHTML = locations.map((location) => `
-    <article  class="location-card">
+    <article onClick="onRelocate(${location.lat}, ${location.lng})" class="location-card">
                     <button data-id="${location.id}" onClick="onDeleteLocation(this)" class="delete-location-btn">x</button>
                     <h3>${location.locName}</h3>
                     <p>saved: ${location.date}</p>
@@ -56,18 +57,20 @@ function onDeleteLocation(ev) {
     console.log(ev.dataset.id);
     deleteLocation(ev.dataset.id)
     renderSavedLocations()
+    initMap()
 }
 
 let map
 
 function initMap() {
-    var userPrefs = getUserPrefs()
+    const locations = getGLocations()
+    const userPrefs = getUserPrefs()
     map = new google.maps.Map(document.querySelector(".map-container"), {
         center: { lat: 31.783012, lng: 34.631833 },
         zoom: +userPrefs.zoomFactor,
     });
-    gLocations.map(location => {
-        return new google.maps.Marker({
+    locations.forEach(location => {
+        new google.maps.Marker({
             position: { lat: location.lat, lng: location.lng },
             map: map,
         })
@@ -86,15 +89,21 @@ function initMap() {
 
     map.addListener("click", (e) => {
         placeMarkerAndPanTo(e.latLng, map);
-        saveLocationToLocationsList(e.latLng.toJSON())
+        onSaveLocation(e.latLng.toJSON())
+
     });
 
+}
+
+function onSaveLocation(letlng) {
+    var locName = prompt('enter location name')
+    saveLocationToLocationsList(letlng, locName)
 }
 
 function placeMarkerAndPanTo(latLng, map) {
     new google.maps.Marker({
         position: latLng,
-        map: map,
+        map,
     });
     map.panTo(latLng);
 }
@@ -115,6 +124,9 @@ function showLocation(position) {
     initMap(position.coords.latitude, position.coords.longitude)
 }
 
+function onRelocate(lat, lng) {
+    relocate(lat, lng)
+}
 
-window.initMap = initMap;
+
 
